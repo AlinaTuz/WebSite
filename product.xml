@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE phones[
+    <!ELEMENT phones (phcolor, sellTypes, products)>
+    <!ELEMENT phcolor (color+)>
+    <!ATTLIST color phcolor ID #REQUIRED>
+    <!ELEMENT color (#PCDATA)>
+    <!ELEMENT sellTypes (type+)>
+    <!ATTLIST type mType ID #REQUIRED>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT products (product+)>
+    <!ELEMENT product (DevColor,name,price,serialNum,releaseYear?,avQuantity?,form,imgLink*)>
+    <!ATTLIST product 
+        sellType IDREF #REQUIRED
+        bySale NMTOKEN "false">
+    <!ELEMENT DevColor (#PCDATA)>
+    <!ATTLIST DevColor deviceColor IDREF #REQUIRED>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT serialNum (#PCDATA)>
+    <!ELEMENT releaseYear (#PCDATA)>
+    <!ELEMENT avQuantity (#PCDATA)>
+    <!ELEMENT form (#PCDATA)>
+    <!ELEMENT imgLink (#PCDATA)>
+    ]>
+<devices>
+    <phcolor>
+        <color dcolor="black">Black</color>
+        <color dcolor="white">White</color>
+        <color dcolor="gray">Gray</color>
+    </phcolor>
+
+    <sellTypes>
+        <type mType="Samsung">Samsung</type>
+        <type mType="Mi">Xiaomi</type>
+        <type mType="Apple">Apple</type>
+    </sellTypes>
+
+    <device>
+        <device1 sellType="Samsung" bySale="true">
+            <DevColor deviceColor = "black"/>
+            <name>Galaxy S22</name>
+            <price>xxx</price>
+            <serialNum>SM-S901BZKDSEK</serialNum>
+            <releaseYear>2020</releaseYear>
+            <form>Телефон</form>
+            <imgLink>device_img/device1.webp</imgLink>
+        </device1>       
+		
+    </device>
+    
+</devices>
